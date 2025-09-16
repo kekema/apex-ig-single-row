@@ -27,7 +27,7 @@
         "plugin" : {
           "internalName" : "LIB4X.AXT.IG.SINGLEROW",
           "type" : "region",
-          "demo" : "https://oracleapex.com/ords/r/yola/demo/ig-single-row",
+          "demo" : "https://apex.oracle.com/ords/r/yola/demo/ig-single-row",
           "previewImage" : "https://github.com/kekema/apex-ig-single-row/blob/main/ig-single-row.jpg?raw=true"
         }
       }
