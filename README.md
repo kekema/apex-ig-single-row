@@ -50,15 +50,15 @@ Next classes can be used to reduce a field item width. Configure the class on th
 
 The plugin has the following public functions.
 
-lib4x.axt.ig.singleRow.masterDetailSaveCallServer : can be used for the callserver in apex.model.save(). By using this callServer as a wrapper around the save request, it will prevent a 'Malformed response' error in case of applying Master-Detail referential integrity (Single Transaction). This as a workaround for a bug in APEX. The code replaces the original model id (eg 't1000') in the response with the server side generated id (insert situations).
+**lib4x.axt.ig.singleRow.masterDetailSaveCallServer** : can be used for the callserver in apex.model.save(). By using this callServer as a wrapper around the save request, it will prevent a 'Malformed response' error in case of applying Master-Detail referential integrity (Single Transaction). This as a workaround for a bug in APEX. The code replaces the original model id (eg 't1000') in the response with the server side generated id (insert situations).
 
-lib4x.axt.ig.singleRow.validate(igStaticId) : can be used before save as to deal with the next issue: when in edit mode and hitting the save button, the event 'endrecordedit' won't fire and any (html5) validation errors won't populate into the model, from which it will execute the server call (and execute the server-side validations). In the validate function, the logic populates any validation errors into the model, so it will only go to the server when no open errors.
+**lib4x.axt.ig.singleRow.validate(igStaticId)** : can be used before save as to deal with the next issue: when in edit mode and hitting the save button, the event 'endrecordedit' won't fire and any (html5) validation errors won't populate into the model, from which it will execute the server call (and execute the server-side validations). In the validate function, the logic populates any validation errors into the model, so it will only go to the server when no open errors.
 
-lib4x.axt.ig.singleRow.gotoAnyError(igStaticId) : function which can be used to jump to the first row having error(s). This can be errors in related detail records as well (master-detail setting).
+**lib4x.axt.ig.singleRow.gotoAnyError(igStaticId)** : function which can be used to jump to the first row having error(s). This can be errors in related detail records as well (master-detail setting).
 
-Also an event is exposed: lib4x_ig_rv_update_actions: will fire when the state of the toolbar buttons (powered by actions) is redetermined.
+Also an event is exposed: **lib4x_ig_rv_update_actions**: will fire when the state of the toolbar buttons (powered by actions) is redetermined.
 
-Below are examples codes as taken from the demo page (Customer Orders demo) in which the above functions and event are also illustrated.
+Below are examples codes as taken from the [demo page](https://oracleapex.com/ords/r/yola/demo/ig-single-row) (Customer Orders demo) in which the above functions and event are also illustrated.
 
 Page - Function and Global Variable Declaration
 
@@ -91,9 +91,7 @@ Page - Function and Global Variable Declaration
                 callServer = lib4x.axt.ig.singleRow.masterDetailSaveCallServer;
             }
             return origSave(requestData, options, modelId, includeRelated, callServer);
-        }; 
-        // BOM demo
-        //apex.region('ig_bom_part').call('getActions').hide('lib4x-toggle-collapsibles');       
+        };      
     });    
     $(function() {
         let region$ = $("#ig_order_header");    
