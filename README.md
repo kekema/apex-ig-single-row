@@ -60,7 +60,7 @@ The plugin has the following public functions.
 
 Also an event is exposed: **lib4x_ig_rv_update_actions**: will fire when the state of the toolbar buttons (powered by actions) is redetermined.
 
-Below are examples codes as taken from the [demo page](https://oracleapex.com/ords/r/yola/demo/ig-single-row) (Customer Orders demo) in which the above functions and event are also illustrated.
+Below are example codes as taken from the [demo page](https://oracleapex.com/ords/r/yola/demo/ig-single-row) (Customer Orders demo) in which the above functions and event are also illustrated.
 
 Page - Function and Global Variable Declaration
 
