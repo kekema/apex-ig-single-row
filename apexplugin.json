@@ -2,7 +2,7 @@
     "name" : "IG Single Row",
     "version" : "1.0.0",
     "description" : "Region plugin to render a single row of data in a simple form layout, enabling editing, navigating and refreshing data without page submits. #lib4x",
-    "keywords" : ["Single Row", "Form", "Master Detail", "Single Transaction"],
+    "keywords" : ["Single Row", "Form", "AJAX", "Master Detail", "Single Transaction"],
     "homepage" : "https://github.com/kekema/apex-ig-single-row",
     "bugs" : {
       "url" : "https://github.com/kekema/apex-ig-single-row/issues",
@@ -27,8 +27,8 @@
         "plugin" : {
           "internalName" : "LIB4X.AXT.IG.SINGLEROW",
           "type" : "region",
-	        "demo" : "https://oracleapex.com/ords/r/yola/demo/ig-single-row",
-	        "previewImage" : "https://github.com/kekema/apex-ig-single-row/blob/main/ig-single-row.jpg?raw=true"
+          "demo" : "https://oracleapex.com/ords/r/yola/demo/ig-single-row",
+          "previewImage" : "https://github.com/kekema/apex-ig-single-row/blob/main/ig-single-row.jpg?raw=true"
         }
       }
     }
