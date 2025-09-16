@@ -56,6 +56,8 @@ The plugin has the following public functions.
 
 **lib4x.axt.ig.singleRow.gotoAnyError(igStaticId)** : function which can be used to jump to the first row having error(s). This can be errors in related detail records as well (master-detail setting).
 
+**lib4x.axt.ig.singleRow.initIG(config)** : to be used in IG/Attributes/Initialization JavaScript Function (see above).
+
 Also an event is exposed: **lib4x_ig_rv_update_actions**: will fire when the state of the toolbar buttons (powered by actions) is redetermined.
 
 Below are examples codes as taken from the [demo page](https://oracleapex.com/ords/r/yola/demo/ig-single-row) (Customer Orders demo) in which the above functions and event are also illustrated.
