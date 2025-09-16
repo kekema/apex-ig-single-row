@@ -1,7 +1,7 @@
 # apex-ig-single-row
 Region plugin to render a single row of data in a simple form layout, enabling editing, navigating and refreshing data without page submits.
 
-See this [blog item](https://karelekema.hashnode.dev/oracle-apex-ig-single-row-plugin) for an overview of the functionality.
+See this [blog item](https://karelekema.hashnode.dev/oracle-apex-ig-single-row-plugin) for a description of the plugin.
 
 <p>
 <img src="./ig-single-row.jpg" height="80%" width="80%">
