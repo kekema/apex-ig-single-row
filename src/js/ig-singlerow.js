@@ -557,7 +557,7 @@ lib4x.axt.ig.singleRow = (function($) {
 
         let toolbarData = $.apex.interactiveGrid.copyDefaultToolbar();
         // take away unneeded options from the Actions menu
-        if (igConfig.features.saveReport.isDeveloper)
+        if (igConfig.features?.saveReport?.isDeveloper)
         {
             // developer should be able to arrange columns (fields) and save it to the default report
             toolbarData.toolbarInsertAfter('actions1',
