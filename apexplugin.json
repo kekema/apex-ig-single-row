@@ -1,6 +1,6 @@
 {
     "name" : "IG Single Row",
-    "version" : "1.0.0",
+    "version" : "1.0.1",
     "description" : "Region plugin to render a single row of data in a simple form layout, enabling editing, navigating and refreshing data without page submits. #lib4x",
     "keywords" : ["Single Row", "Form", "AJAX", "Master Detail", "Single Transaction"],
     "homepage" : "https://github.com/kekema/apex-ig-single-row",
