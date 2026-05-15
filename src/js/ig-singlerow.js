@@ -43,6 +43,10 @@ lib4x.axt.ig.singleRow = (function($) {
 
     let sarvOptions = {};           // plugin options and config
 
+    const [apexMajorVersion, apexMinorVersion, apexPatchVersion] = apex.env.APEX_VERSION.split(".").map(Number);
+    // region id property name as depending on the APEX version (regionStaticId/regionDomId)
+    let regionIdPropertyName = apexMajorVersion >= 26 ? 'regionDomId' : 'regionStaticId';      
+
     let rowViewModule = (function() 
     {
         // Extending the underlying recordView widget as to be able to control
@@ -135,7 +139,7 @@ lib4x.axt.ig.singleRow = (function($) {
             } else if ( meta.updated ) {
                 status = apex.lang.getMessage( "APEX.GV.ROW_CHANGED" );
             }  
-            let igStaticId = model.getOption('regionStaticId');
+            let igStaticId = model.getOption(regionIdPropertyName);
             let toolbar$ = apex.region(igStaticId).call('getToolbar');
             if (toolbar$ && toolbar$.length)
             {
@@ -311,7 +315,7 @@ lib4x.axt.ig.singleRow = (function($) {
                 let ig$ = $('#' + wrpStaticId + ' .a-IG').first();
                 if (ig$.length)
                 {
-                    let igStaticId = ig$.interactiveGrid('option').config.regionStaticId;
+                    let igStaticId = ig$.interactiveGrid('option').config[regionIdPropertyName];
                     let singleRowView$ = ig$.interactiveGrid('getViews').grid.singleRowView$;
                     adjustRV(igStaticId, singleRowView$);
 
@@ -487,7 +491,7 @@ lib4x.axt.ig.singleRow = (function($) {
     // initIG to be called from the IG JavaScript Initialization Function
     let initIG = function(igConfig)
     {
-        let igStaticId = igConfig.regionStaticId;
+        let igStaticId = igConfig[regionIdPropertyName];
         let wrpStaticId = $('#' + igStaticId).closest('.' + C_LIB4X_SARV).attr('id');
         let rvOptions = sarvOptions[wrpStaticId];
         let buttonsConf = rvOptions.buttonsConf;
@@ -545,7 +549,7 @@ lib4x.axt.ig.singleRow = (function($) {
                     set: function(expanded)
                     {
                         this.expanded = expanded;
-                        $('#'+ igConfig.regionStaticId + ' .' + C_COLLAPSIBLE).collapsible(expanded ? 'expand' : 'collapse');
+                        $('#'+ igConfig[regionIdPropertyName] + ' .' + C_COLLAPSIBLE).collapsible(expanded ? 'expand' : 'collapse');
                     },
                     get: function()
                     {
